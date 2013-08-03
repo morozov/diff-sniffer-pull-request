@@ -1,0 +1,20 @@
+{
+  "name": "morozov/diff-sniffer-pull-request",
+  "description": "GitHub pull request validator for Diff Sniffer",
+  "authors": [
+    {
+      "name": "Sergei Morozov",
+      "email": "morozov@tut.by"
+    }
+  ],
+  "require": {
+    "morozov/diff-sniffer-core": "dev-master",
+    "knplabs/github-api": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "DiffSniffer": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
