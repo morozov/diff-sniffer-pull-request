@@ -16,5 +16,9 @@
       "DiffSniffer": "src/"
     }
   },
+  "bin": [
+    "bin/authenticate",
+    "bin/pull-request"
+  ],
   "minimum-stability": "dev"
 }

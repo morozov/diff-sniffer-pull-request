@@ -48,8 +48,6 @@ $changeset = new \DiffSniffer\Changeset\PullRequest(
     array_shift($arguments)
 );
 
-$projectRoot = dirname(__DIR__);
-
 $runner = new \DiffSniffer\Runner();
 $return_var = $runner->run($changeset, $arguments);
 
