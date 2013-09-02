@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "8a8f304e91a5dbd5ca86fb703675dd060cc5d560"
+                "reference": "3aa2d6f3ab7bf7e50d60cc0dbf8d1e6927bb5794"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/8a8f304e91a5dbd5ca86fb703675dd060cc5d560",
-                "reference": "8a8f304e91a5dbd5ca86fb703675dd060cc5d560",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/3aa2d6f3ab7bf7e50d60cc0dbf8d1e6927bb5794",
+                "reference": "3aa2d6f3ab7bf7e50d60cc0dbf8d1e6927bb5794",
                 "shasum": ""
             },
             "require": {
@@ -58,7 +58,7 @@
                 "gist",
                 "github"
             ],
-            "time": "2013-07-31 13:28:53"
+            "time": "2013-09-01 20:31:37"
         },
         {
             "name": "kriswallsmith/buzz",
@@ -114,12 +114,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/morozov/diff-sniffer-core.git",
-                "reference": "7787e95bf3ef21ae1a346195ff581bc7d26d7e8d"
+                "reference": "e279b55326f468ff40bd96ffbd5a92fab6ad6550"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/morozov/diff-sniffer-core/zipball/7787e95bf3ef21ae1a346195ff581bc7d26d7e8d",
-                "reference": "7787e95bf3ef21ae1a346195ff581bc7d26d7e8d",
+                "url": "https://api.github.com/repos/morozov/diff-sniffer-core/zipball/e279b55326f468ff40bd96ffbd5a92fab6ad6550",
+                "reference": "e279b55326f468ff40bd96ffbd5a92fab6ad6550",
                 "shasum": ""
             },
             "require": {
@@ -142,7 +142,7 @@
                 }
             ],
             "description": "Core component for Diff Sniffer, a tool to validate coding standards only in changed line",
-            "time": "2013-08-28 19:28:56"
+            "time": "2013-09-02 19:45:32"
         },
         {
             "name": "squizlabs/php_codesniffer",
