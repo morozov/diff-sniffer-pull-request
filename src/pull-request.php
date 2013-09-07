@@ -49,6 +49,4 @@ $changeset = new \DiffSniffer\Changeset\PullRequest(
 );
 
 $runner = new \DiffSniffer\Runner();
-$return_var = $runner->run($changeset, $arguments);
-
-exit($return_var);
+return $runner->run($changeset, $arguments);
