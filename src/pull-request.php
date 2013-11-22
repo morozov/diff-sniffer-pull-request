@@ -14,19 +14,14 @@
  */
 require_once __DIR__ . '/../vendor/autoload.php';
 
-if (!file_exists(__DIR__ . '/../config.php')) {
-    throw new \LogicException(
-        'Configuration file doesn\'t exist. Please run authenticate.php before'
-    );
-}
+$config = new DiffSniffer\Config();
+$config = $config->getParams();
 
 if ($_SERVER['argc'] < 4) {
     throw new \InvalidArgumentException(
         'Usage: ' . $_SERVER['argv'][0] . ' user repo pull <code sniffer arguments>'
     );
 }
-
-$config = include __DIR__ . '/../config.php';
 
 $client = new Github\Client(
     new Github\HttpClient\CachedHttpClient(

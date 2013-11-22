@@ -33,12 +33,5 @@ $info = $api->create(
     )
 );
 
-$info = var_export($info, true);
-$contents = <<<EOF
-<?php
-
-return $info;
-
-EOF;
-
-file_put_contents(__DIR__ . '/../config.php', $contents);
+$config = new DiffSniffer\Config();
+$config->setParams($info);
