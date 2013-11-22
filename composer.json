@@ -12,6 +12,7 @@
     "knplabs/github-api": "dev-master"
   },
   "autoload": {
+    "files": ["src/diff-sniffer.php"],
     "psr-0": {
       "DiffSniffer": "src/"
     }

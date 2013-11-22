@@ -14,15 +14,6 @@
  */
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$config = new DiffSniffer\Config();
-$config = $config->getParams();
-
-if ($_SERVER['argc'] < 4) {
-    throw new \InvalidArgumentException(
-        'Usage: ' . $_SERVER['argv'][0] . ' user repo pull <code sniffer arguments>'
-    );
-}
-
 $client = new Github\Client(
     new Github\HttpClient\CachedHttpClient(
         array(
@@ -31,17 +22,11 @@ $client = new Github\Client(
     )
 );
 
-$client->authenticate($config['token'], null, Github\Client::AUTH_URL_TOKEN);
+$config = new DiffSniffer\Config();
 
-$arguments = $_SERVER['argv'];
-array_shift($arguments);
-
-$changeset = new \DiffSniffer\Changeset\PullRequest(
-    $client,
-    array_shift($arguments),
-    array_shift($arguments),
-    array_shift($arguments)
-);
-
-$runner = new \DiffSniffer\Runner();
-return $runner->run($changeset, $arguments);
+if ($config->isDefined()) {
+    return DiffSniffer\run($client, $config, $_SERVER['argv']);
+} else {
+    DiffSniffer\collectCredentials($client, $config, STDIN, STDOUT);
+    return 0;
+}

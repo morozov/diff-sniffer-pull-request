@@ -29,21 +29,32 @@ namespace DiffSniffer;
 class Config
 {
     /**
-     * Returns configuration parameters or throws exception in case if configuration is unavailable.
+     * Checks if configuration is defined.
+     *
+     * @return array
+     * @throws \LogicException
+     */
+    public function isDefined()
+    {
+        $path = $this->getConfigPath();
+
+        return file_exists($path);
+    }
+
+    /**
+     * Returns configuration parameters or throws exception in case if configuration
+     * is not defined.
      *
      * @return array
      * @throws \LogicException
      */
     public function getParams()
     {
-        $path = $this->getConfigPath();
-        if (!file_exists($path)) {
-            throw new \LogicException(
-                'Configuration file doesn\'t exist. Please run authenticate.php before'
-            );
+        if (!$this->isDefined()) {
+            throw new \LogicException('Configuration is not defined');
         }
 
-        return include $path;
+        return include $this->getConfigPath();
     }
 
     /**
