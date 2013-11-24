@@ -3,31 +3,126 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "81cd0fbec7604a4de0fe0332d275f88b",
+    "hash": "425bc92d7a374f76cf7c740c457d4c8f",
     "packages": [
+        {
+            "name": "guzzle/guzzle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "bc0d57f10ca5709a06b688e7fa5cb4432bc00804"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/bc0d57f10ca5709a06b688e7fa5cb4432bc00804",
+                "reference": "bc0d57f10ca5709a06b688e7fa5cb4432bc00804",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": ">=2.1"
+            },
+            "replace": {
+                "guzzle/batch": "self.version",
+                "guzzle/cache": "self.version",
+                "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
+                "guzzle/inflection": "self.version",
+                "guzzle/iterator": "self.version",
+                "guzzle/log": "self.version",
+                "guzzle/parser": "self.version",
+                "guzzle/plugin": "self.version",
+                "guzzle/plugin-async": "self.version",
+                "guzzle/plugin-backoff": "self.version",
+                "guzzle/plugin-cache": "self.version",
+                "guzzle/plugin-cookie": "self.version",
+                "guzzle/plugin-curlauth": "self.version",
+                "guzzle/plugin-error-response": "self.version",
+                "guzzle/plugin-history": "self.version",
+                "guzzle/plugin-log": "self.version",
+                "guzzle/plugin-md5": "self.version",
+                "guzzle/plugin-mock": "self.version",
+                "guzzle/plugin-oauth": "self.version",
+                "guzzle/service": "self.version",
+                "guzzle/stream": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "*",
+                "monolog/monolog": "1.*",
+                "phpunit/phpunit": "3.7.*",
+                "psr/log": "1.0.*",
+                "symfony/class-loader": "*",
+                "zendframework/zend-cache": "2.0.*",
+                "zendframework/zend-log": "2.0.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Guzzle\\Tests": "tests/",
+                    "Guzzle": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2013-11-22 17:54:40"
+        },
         {
             "name": "knplabs/github-api",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "3aa2d6f3ab7bf7e50d60cc0dbf8d1e6927bb5794"
+                "reference": "1ab12b35ab4459eefac7ca75c5a735c1ecfee33e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/3aa2d6f3ab7bf7e50d60cc0dbf8d1e6927bb5794",
-                "reference": "3aa2d6f3ab7bf7e50d60cc0dbf8d1e6927bb5794",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/1ab12b35ab4459eefac7ca75c5a735c1ecfee33e",
+                "reference": "1ab12b35ab4459eefac7ca75c5a735c1ecfee33e",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "kriswallsmith/buzz": ">=0.7",
+                "guzzle/guzzle": ">=3.7",
                 "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=3.6.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -58,78 +153,27 @@
                 "gist",
                 "github"
             ],
-            "time": "2013-09-01 20:31:37"
+            "time": "2013-11-21 20:36:55"
         },
         {
-            "name": "kriswallsmith/buzz",
-            "version": "dev-master",
+            "name": "morozov/bootstrap",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kriswallsmith/Buzz.git",
-                "reference": "d7545a943496c401f7f5248f285e44b33c86905e"
+                "url": "https://github.com/morozov/bootstrap.git",
+                "reference": "3e21cbe6b5436c09817a892a5abac37fa6091953"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/Buzz/zipball/d7545a943496c401f7f5248f285e44b33c86905e",
-                "reference": "d7545a943496c401f7f5248f285e44b33c86905e",
+                "url": "https://api.github.com/repos/morozov/bootstrap/zipball/3e21cbe6b5436c09817a892a5abac37fa6091953",
+                "reference": "3e21cbe6b5436c09817a892a5abac37fa6091953",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "suggest": {
-                "ext-curl": "*"
-            },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Buzz": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kris Wallsmith",
-                    "email": "kris.wallsmith@gmail.com",
-                    "homepage": "http://kriswallsmith.net/"
-                }
-            ],
-            "description": "Lightweight HTTP client",
-            "homepage": "https://github.com/kriswallsmith/Buzz",
-            "keywords": [
-                "curl",
-                "http client"
-            ],
-            "time": "2013-06-04 15:32:22"
-        },
-        {
-            "name": "morozov/diff-sniffer-core",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/morozov/diff-sniffer-core.git",
-                "reference": "45847605058b113882c756b8d9712df16b5adac8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/morozov/diff-sniffer-core/zipball/45847605058b113882c756b8d9712df16b5adac8",
-                "reference": "45847605058b113882c756b8d9712df16b5adac8",
-                "shasum": ""
-            },
-            "require": {
-                "squizlabs/php_codesniffer": "1.4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "DiffSniffer": "src/"
-                },
                 "files": [
                     "src/bootstrap.php"
                 ]
@@ -144,21 +188,58 @@
                     "email": "morozov@tut.by"
                 }
             ],
-            "description": "Core component for Diff Sniffer, a tool to validate coding standards only in changed line",
-            "time": "2013-09-07 06:58:51"
+            "description": "Command line application bootstrap component",
+            "time": "2013-11-13 08:30:17"
         },
         {
-            "name": "squizlabs/php_codesniffer",
-            "version": "1.4.6",
+            "name": "morozov/diff-sniffer-core",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "a99caa52ed173ee83d6721ba012614f38c1dcbb6"
+                "url": "https://github.com/morozov/diff-sniffer-core.git",
+                "reference": "e35b0e02b51a12e62c7bd3cb0b5ec1de3dfb4fcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/a99caa52ed173ee83d6721ba012614f38c1dcbb6",
-                "reference": "a99caa52ed173ee83d6721ba012614f38c1dcbb6",
+                "url": "https://api.github.com/repos/morozov/diff-sniffer-core/zipball/e35b0e02b51a12e62c7bd3cb0b5ec1de3dfb4fcd",
+                "reference": "e35b0e02b51a12e62c7bd3cb0b5ec1de3dfb4fcd",
+                "shasum": ""
+            },
+            "require": {
+                "morozov/bootstrap": "1.0.*",
+                "squizlabs/php_codesniffer": "1.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "DiffSniffer": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergei Morozov",
+                    "email": "morozov@tut.by"
+                }
+            ],
+            "description": "Core component for Diff Sniffer, a tool to validate coding standards only in changed line",
+            "time": "2013-11-24 08:23:46"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "1.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "df764a1604607ea61c4eeea5410666e27cb37a8b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/df764a1604607ea61c4eeea5410666e27cb37a8b",
+                "reference": "df764a1604607ea61c4eeea5410666e27cb37a8b",
                 "shasum": ""
             },
             "require": {
@@ -216,7 +297,61 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2013-07-25 03:49:02"
+            "time": "2013-09-26 00:08:21"
+        },
+        {
+            "name": "symfony/event-dispatcher",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/EventDispatcher",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/EventDispatcher.git",
+                "reference": "04a4e9564f5a506c0ec306b0303fe729cedb5326"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/04a4e9564f5a506c0ec306b0303fe729cedb5326",
+                "reference": "04a4e9564f5a506c0ec306b0303fe729cedb5326",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/dependency-injection": "~2.0"
+            },
+            "suggest": {
+                "symfony/dependency-injection": "",
+                "symfony/http-kernel": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\EventDispatcher\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony EventDispatcher Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-11-22 17:42:00"
         }
     ],
     "packages-dev": [
