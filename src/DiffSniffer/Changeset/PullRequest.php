@@ -85,14 +85,12 @@ class PullRequest implements Changeset
     {
         /** @var \Github\Api\PullRequest $api */
         $api = $this->client->api('pull_request');
-        $this->client->setHeaders(
-            array(
-                sprintf(
-                    'Accept: application/vnd.github.%s.diff',
-                    $this->client->getOption('api_version')
-                )
-            )
-        );
+        $this->client->setHeaders(array(
+            'Accept' => sprintf(
+                'application/vnd.github.%s.diff',
+                $this->client->getOption('api_version')
+            ),
+        ));
 
         $diff = $api->show($this->user, $this->repo, $this->pull);
 
