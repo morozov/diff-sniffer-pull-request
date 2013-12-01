@@ -27,7 +27,7 @@ require $autoload;
 $client = new Github\Client(
     new Github\HttpClient\CachedHttpClient(
         array(
-            'cache_dir' => '/tmp/github-api-cache',
+            'cache_dir' => sys_get_temp_dir() . '/github-api-cache',
         )
     )
 );
