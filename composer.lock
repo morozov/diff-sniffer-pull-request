@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "b0d91a5aca51fbad219f0bc33f0500745fcf8cd6"
+                "reference": "d04d235d085c9be1883ee7817000394d4e3c7deb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b0d91a5aca51fbad219f0bc33f0500745fcf8cd6",
-                "reference": "b0d91a5aca51fbad219f0bc33f0500745fcf8cd6",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/d04d235d085c9be1883ee7817000394d4e3c7deb",
+                "reference": "d04d235d085c9be1883ee7817000394d4e3c7deb",
                 "shasum": ""
             },
             "require": {
@@ -95,7 +95,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-11-28 21:02:44"
+            "time": "2013-11-30 18:14:26"
         },
         {
             "name": "knplabs/github-api",
@@ -103,12 +103,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "c70e0228be94afb8f944facb759108dda93454aa"
+                "reference": "fc5aef1a93cf0e6e81b88d972548dd42e682b60b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/c70e0228be94afb8f944facb759108dda93454aa",
-                "reference": "c70e0228be94afb8f944facb759108dda93454aa",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/fc5aef1a93cf0e6e81b88d972548dd42e682b60b",
+                "reference": "fc5aef1a93cf0e6e81b88d972548dd42e682b60b",
                 "shasum": ""
             },
             "require": {
@@ -153,7 +153,7 @@
                 "gist",
                 "github"
             ],
-            "time": "2013-11-29 17:24:33"
+            "time": "2013-11-30 21:09:43"
         },
         {
             "name": "morozov/bootstrap",
@@ -197,12 +197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/morozov/diff-sniffer-core.git",
-                "reference": "e35b0e02b51a12e62c7bd3cb0b5ec1de3dfb4fcd"
+                "reference": "4556719790581c858ab21b8e99ea7acf78f38185"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/morozov/diff-sniffer-core/zipball/e35b0e02b51a12e62c7bd3cb0b5ec1de3dfb4fcd",
-                "reference": "e35b0e02b51a12e62c7bd3cb0b5ec1de3dfb4fcd",
+                "url": "https://api.github.com/repos/morozov/diff-sniffer-core/zipball/4556719790581c858ab21b8e99ea7acf78f38185",
+                "reference": "4556719790581c858ab21b8e99ea7acf78f38185",
                 "shasum": ""
             },
             "require": {
@@ -211,6 +211,9 @@
             },
             "type": "library",
             "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
                 "psr-0": {
                     "DiffSniffer": "src/"
                 }
@@ -226,7 +229,7 @@
                 }
             ],
             "description": "Core component for Diff Sniffer, a tool to validate coding standards only in changed line",
-            "time": "2013-11-24 08:23:46"
+            "time": "2013-12-01 02:49:59"
         },
         {
             "name": "squizlabs/php_codesniffer",

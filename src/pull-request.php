@@ -35,7 +35,18 @@ $client = new Github\Client(
 $config = new DiffSniffer\Config();
 
 if ($config->isDefined()) {
-    return DiffSniffer\run($client, $config, $_SERVER['argv']);
+    if ($_SERVER['argc'] < 4) {
+        throw new \InvalidArgumentException(
+            'Usage: ' . $_SERVER['argv'][0] . ' user repo pull <code sniffer arguments>'
+        );
+    }
+
+    $arguments = DiffSniffer\getCodeSnifferArguments(
+        $_SERVER['argv'],
+        __DIR__ . '/../config.php'
+    );
+
+    return DiffSniffer\run($client, $config, $arguments);
 } else {
     DiffSniffer\collectCredentials($client, $config, STDIN, STDOUT);
     return 0;

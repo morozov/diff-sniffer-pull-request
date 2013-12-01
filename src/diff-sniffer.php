@@ -63,15 +63,7 @@ function run(Client $client, Config $config, array $arguments)
 {
     $config = $config->getParams();
 
-    if (count($arguments) < 4) {
-        throw new \InvalidArgumentException(
-            'Usage: ' . $arguments[0] . ' user repo pull <code sniffer arguments>'
-        );
-    }
-
     $client->authenticate($config['token'], null, Client::AUTH_URL_TOKEN);
-
-    array_shift($arguments);
 
     $changeset = new Changeset(
         $client,
