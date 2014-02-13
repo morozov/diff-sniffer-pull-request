@@ -24,6 +24,11 @@ if (!file_exists($autoload)) {
 
 require $autoload;
 
+if ($_SERVER['argv'] > 1 && $_SERVER['argv'][1] == '--version') {
+    echo 'Diff Sniffer For Pull Requests version 1.0.0' . PHP_EOL;
+    exit;
+}
+
 $client = new Github\Client(
     new Github\HttpClient\CachedHttpClient(
         array(
