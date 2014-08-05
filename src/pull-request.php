@@ -8,9 +8,9 @@
  * @category  DiffSniffer
  * @package   DiffSniffer
  * @author    Sergei Morozov <morozov@tut.by>
- * @copyright 2013 Sergei Morozov
+ * @copyright 2014 Sergei Morozov
  * @license   http://mit-license.org/ MIT Licence
- * @link      http://github.com/morozov/diff-sniffer
+ * @link      http://github.com/morozov/diff-sniffer-pull-request
  */
 $autoload = __DIR__ . '/../vendor/autoload.php';
 
