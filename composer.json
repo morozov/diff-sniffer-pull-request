@@ -8,8 +8,8 @@
     }
   ],
   "require": {
-    "morozov/diff-sniffer-core": "dev-phpcs-15",
-    "knplabs/github-api": "dev-master"
+    "morozov/diff-sniffer-core": "1.5.*",
+    "knplabs/github-api": "~1.2"
   },
   "autoload": {
     "files": ["src/diff-sniffer.php"],
