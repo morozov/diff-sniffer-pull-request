@@ -8,7 +8,7 @@ Installation
 
 The easiest way to use it is to download PHAR-package:
 ```
-$ wget https://www.dropbox.com/s/4szks9gya41lp62/pull-request.phar
+$ wget https://github.com/morozov/diff-sniffer-pull-request/releases/download/1.5.0/pull-request.phar
 $ chmod +x pull-request.phar
 ```
 
@@ -31,7 +31,7 @@ $ ./pull-request.phar username repository pull-request-number [--standard=standa
 ```
 For example:
 ```
-$ ./pull-request.phar composer composer 2674 --standard=PSR2
+$ ./pull-request.phar composer composer 2674
 
 FILE: src/Composer/Downloader/DownloadManager.php
 --------------------------------------------------------------------------------
@@ -42,4 +42,4 @@ FOUND 3 ERROR(S) AFFECTING 3 LINE(S)
  240 | ERROR | Expected "if (...) {\n"; found "if(...) {\n"
 --------------------------------------------------------------------------------
 ```
-As `standard-name` you can use either one of [standards](https://github.com/squizlabs/PHP_CodeSniffer/tree/master/CodeSniffer/Standards) bundled with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) or cusom one by providing full path to the standard directory.
+As `standard-name` you can use either one of [standards](https://github.com/squizlabs/PHP_CodeSniffer/tree/master/CodeSniffer/Standards) bundled with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) or cusom one by providing full path to the standard directory. PSR2 is used by default.
