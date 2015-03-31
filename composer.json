@@ -8,7 +8,7 @@
     }
   ],
   "require": {
-    "morozov/diff-sniffer-core": "1.5.*",
+    "morozov/diff-sniffer-core": "~2",
     "knplabs/github-api": "~1.2"
   },
   "autoload": {

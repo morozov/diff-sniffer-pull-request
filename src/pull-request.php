@@ -25,7 +25,7 @@ if (!file_exists($autoload)) {
 require $autoload;
 
 if ($_SERVER['argc'] > 1 && $_SERVER['argv'][1] == '--version') {
-    echo 'Diff Sniffer For Pull Requests version 1.5.0' . PHP_EOL;
+    echo 'Diff Sniffer For Pull Requests version 2.3.0' . PHP_EOL;
     $cli = new PHP_CodeSniffer_CLI();
     $cli->processLongArgument('version', null, null);
     exit;
