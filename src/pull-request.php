@@ -25,7 +25,7 @@ if (!file_exists($autoload)) {
 require $autoload;
 
 if ($_SERVER['argc'] > 1 && $_SERVER['argv'][1] == '--version') {
-    echo 'Diff Sniffer For Pull Requests version 2.3.0' . PHP_EOL;
+    echo 'Diff Sniffer For Pull Requests version 2.3.0.1' . PHP_EOL;
     $cli = new PHP_CodeSniffer_CLI();
     $cli->processLongArgument('version', null, null);
     exit;
@@ -48,10 +48,8 @@ if ($config->isDefined()) {
         );
     }
 
-    $arguments = DiffSniffer\getCodeSnifferArguments(
-        $_SERVER['argv'],
-        __DIR__ . '/../config.php'
-    );
+    $arguments = $_SERVER['argv'];
+    array_shift($arguments);
 
     return DiffSniffer\run($client, $config, $arguments);
 } else {
