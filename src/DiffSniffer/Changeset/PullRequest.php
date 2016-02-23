@@ -117,7 +117,7 @@ class PullRequest implements Changeset
         /** @var \Github\Api\GitData\Blobs $api */
         $api->configure('raw');
         foreach ($files as $file) {
-            $contents = $api->show($this->user, $this->repo, $file['sha']);
+            $contents = $this->getContents($file['sha']);
             $path = $dir . '/' . $file['filename'];
             $dirName = dirname($path);
             if (!file_exists($dirName)) {
@@ -125,5 +125,22 @@ class PullRequest implements Changeset
             }
             file_put_contents($path, $contents);
         }
+    }
+
+    /**
+     * Temporary workaround of the GitHub client bug
+     *
+     * @param string $sha
+     * @return string
+     */
+    protected function getContents($sha)
+    {
+        $path = 'repos/' . rawurlencode($this->user)
+            . '/' . rawurlencode($this->repo)
+            . '/git/blobs/' . rawurlencode($sha);
+        $response = $this->client->getHttpClient()->get($path);
+        $contents = $response->getBody(true);
+
+        return $contents;
     }
 }
