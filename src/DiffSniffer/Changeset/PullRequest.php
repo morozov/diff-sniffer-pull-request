@@ -16,6 +16,7 @@ namespace DiffSniffer\Changeset;
 
 use DiffSniffer\Changeset;
 use Github\Client;
+use Github\Exception\RuntimeException;
 
 /**
  * Changeset that represents pull request on GitHub
@@ -117,7 +118,16 @@ class PullRequest implements Changeset
         /** @var \Github\Api\GitData\Blobs $api */
         $api->configure('raw');
         foreach ($files as $file) {
-            $contents = $this->getContents($file['sha']);
+            try {
+                $contents = $this->getContents($file['sha']);
+            } catch (RuntimeException $e) {
+                if ($e->getCode() === 404) {
+                    // this is probably a submodule reference
+                    // :TODO: need a better solution
+                    continue;
+                }
+            }
+
             $path = $dir . '/' . $file['filename'];
             $dirName = dirname($path);
             if (!file_exists($dirName)) {
