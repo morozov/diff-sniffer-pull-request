@@ -8,7 +8,7 @@
  * @category  DiffSniffer
  * @package   DiffSniffer
  * @author    Sergei Morozov <morozov@tut.by>
- * @copyright 2014 Sergei Morozov
+ * @copyright 2017 Sergei Morozov
  * @license   http://mit-license.org/ MIT Licence
  * @link      http://github.com/morozov/diff-sniffer-pull-request
  */
@@ -54,24 +54,20 @@ function collectCredentials(Client $client, Config $config, $input, $output)
  *
  * @param Client $client    GitHub client
  * @param Config $config    Configuration
- * @param array  $arguments Command line arguments
+ * @param string $user      Command line arguments
+ * @param string $repo      Command line arguments
+ * @param string $pull      Command line arguments
  *
  * @return int              Exit code
  * @throws \InvalidArgumentException
  */
-function run(Client $client, Config $config, array $arguments)
+function run(Client $client, Config $config, $user, $repo, $pull)
 {
     $config = $config->getParams();
 
     $client->authenticate($config['token'], null, Client::AUTH_URL_TOKEN);
 
-    $changeset = new Changeset(
-        $client,
-        array_shift($arguments),
-        array_shift($arguments),
-        array_shift($arguments)
+    return (new Runner())->run(
+        new Changeset($client, $user, $repo, $pull)
     );
-
-    $runner = new Runner();
-    return $runner->run($changeset, $arguments);
 }

@@ -1,0 +1,13 @@
+diff --git a/tests/bootstrap.php b/tests/bootstrap.php
+index b88c49eca8d6..93808b4df796 100644
+--- a/tests/bootstrap.php
++++ b/tests/bootstrap.php
+@@ -18,3 +18,7 @@
+     }
+ });
+ 
++function exception_error_handler($errno, $errstr, $errfile, $errline ) {
++    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
++}
++set_error_handler("exception_error_handler");
+\ No newline at end of file

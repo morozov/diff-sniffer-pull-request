@@ -1,5 +1,4 @@
 #!/usr/bin/env php
 <?php
 
-$exit_code = require __DIR__ . '/../src/pull-request.php';
-exit($exit_code);
+exit(require __DIR__ . '/../src/pull-request.php');

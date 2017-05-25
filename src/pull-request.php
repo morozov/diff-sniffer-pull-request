@@ -8,36 +8,31 @@
  * @category  DiffSniffer
  * @package   DiffSniffer
  * @author    Sergei Morozov <morozov@tut.by>
- * @copyright 2014 Sergei Morozov
+ * @copyright 2017 Sergei Morozov
  * @license   http://mit-license.org/ MIT Licence
  * @link      http://github.com/morozov/diff-sniffer-pull-request
  */
-$autoload = __DIR__ . '/../vendor/autoload.php';
 
-if (!file_exists($autoload)) {
+if (!file_exists(__DIR__ . '/../vendor/autoload.php')) {
     echo 'You must set up the project dependencies, run the following commands:'
         . PHP_EOL . 'curl -sS https://getcomposer.org/installer | php'
         . PHP_EOL . 'php composer.phar install'
         . PHP_EOL;
-    exit(-1);
+    exit(2);
 }
 
-require $autoload;
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../vendor/squizlabs/php_codesniffer/autoload.php';
 
 if ($_SERVER['argc'] > 1 && $_SERVER['argv'][1] == '--version') {
-    echo 'Diff Sniffer For Pull Requests version 2.3.2' . PHP_EOL;
-    $cli = new PHP_CodeSniffer_CLI();
-    $cli->processLongArgument('version', null, null);
+    printf(
+        'Diff Sniffer For Pull Requests version %s' . PHP_EOL,
+        (new \SebastianBergmann\Version('3.0', dirname(__DIR__)))->getVersion()
+    );
     exit;
 }
 
-$client = new Github\Client(
-    new Github\HttpClient\CachedHttpClient(
-        array(
-            'cache_dir' => sys_get_temp_dir() . '/github-api-cache',
-        )
-    )
-);
+$client = new Github\Client();
 
 $config = new DiffSniffer\Config();
 
@@ -48,10 +43,14 @@ if ($config->isDefined()) {
         );
     }
 
-    $arguments = $_SERVER['argv'];
-    array_shift($arguments);
+    $self = array_shift($_SERVER['argv']);
+    $user = array_shift($_SERVER['argv']);
+    $repo = array_shift($_SERVER['argv']);
+    $pull = array_shift($_SERVER['argv']);
+    array_unshift($_SERVER['argv'], $self);
+    $_SERVER['argc'] -= 3;
 
-    return DiffSniffer\run($client, $config, $arguments);
+    return DiffSniffer\run($client, $config, $user, $repo, $pull);
 } else {
     DiffSniffer\collectCredentials($client, $config, STDIN, STDOUT);
     return 0;

@@ -8,7 +8,7 @@
  * @category  DiffSniffer
  * @package   DiffSniffer
  * @author    Sergei Morozov <morozov@tut.by>
- * @copyright 2014 Sergei Morozov
+ * @copyright 2017 Sergei Morozov
  * @license   http://mit-license.org/ MIT Licence
  * @link      http://github.com/morozov/diff-sniffer-pull-request
  */
@@ -22,7 +22,7 @@ namespace DiffSniffer;
  * @category  DiffSniffer
  * @package   DiffSniffer
  * @author    Sergei Morozov <morozov@tut.by>
- * @copyright 2014 Sergei Morozov
+ * @copyright 2017 Sergei Morozov
  * @license   http://mit-license.org/ MIT Licence
  * @link      http://github.com/morozov/diff-sniffer-pull-request
  */
