@@ -15,14 +15,13 @@ $ chmod +x pull-request.phar
 Configuration
 -------------
 
-Currently validator requires GitHub authentication even for accessing public repositories. In order to obtain authentication token just run it for the first time and provide your username and password:
+The configuration is optional and is mostly needed to access private repositories and in case of reaching anonymous GitHub API usage limit.
+
+To edit configuration, copy the default configuration file and adjust it to your taste:
 ```
-$ ./pull-request.phar
-Username: morozov
-Password: iloveyou
-Configuration successfully saved.
+$ cp etc/config.dist.php etc/config.php
+$ vi etc/config.php
 ```
-Be aware that password is displayed in terminal during when you type it.
 
 Usage
 -----

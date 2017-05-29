@@ -13,45 +13,41 @@
  * @link      http://github.com/morozov/diff-sniffer-pull-request
  */
 
-if (!file_exists(__DIR__ . '/../vendor/autoload.php')) {
-    echo 'You must set up the project dependencies, run the following commands:'
-        . PHP_EOL . 'curl -sS https://getcomposer.org/installer | php'
-        . PHP_EOL . 'php composer.phar install'
-        . PHP_EOL;
-    exit(2);
-}
+use DiffSniffer\Changeset\PullRequest;
+use DiffSniffer\Runner;
+use Github\Client;
+use SebastianBergmann\Version;
 
-require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../vendor/squizlabs/php_codesniffer/autoload.php';
+require __DIR__ . '/bootstrap.php';
 
 if ($_SERVER['argc'] > 1 && $_SERVER['argv'][1] == '--version') {
     printf(
         'Diff Sniffer For Pull Requests version %s' . PHP_EOL,
-        (new \SebastianBergmann\Version('3.0', dirname(__DIR__)))->getVersion()
+        (new Version('3.0', dirname(__DIR__)))->getVersion()
     );
     exit;
 }
 
-$client = new Github\Client();
-
-$config = new DiffSniffer\Config();
-
-if ($config->isDefined()) {
-    if ($_SERVER['argc'] < 4) {
-        throw new \InvalidArgumentException(
-            'Usage: ' . $_SERVER['argv'][0] . ' user repo pull <code sniffer arguments>'
-        );
-    }
-
-    $self = array_shift($_SERVER['argv']);
-    $user = array_shift($_SERVER['argv']);
-    $repo = array_shift($_SERVER['argv']);
-    $pull = array_shift($_SERVER['argv']);
-    array_unshift($_SERVER['argv'], $self);
-    $_SERVER['argc'] -= 3;
-
-    return DiffSniffer\run($client, $config, $user, $repo, $pull);
-} else {
-    DiffSniffer\collectCredentials($client, $config, STDIN, STDOUT);
-    return 0;
+if ($_SERVER['argc'] < 4) {
+    throw new InvalidArgumentException(
+        'Usage: ' . $_SERVER['argv'][0] . ' user repo pull <code sniffer arguments>'
+    );
 }
+
+$client = new Client();
+
+if (file_exists(__DIR__ . '/../etc/config.php')) {
+    $config = require __DIR__ . '/../etc/config.php';
+    $client->authenticate($config['token'], null, Client::AUTH_URL_TOKEN);
+}
+
+$self = array_shift($_SERVER['argv']);
+$user = array_shift($_SERVER['argv']);
+$repo = array_shift($_SERVER['argv']);
+$pull = array_shift($_SERVER['argv']);
+array_unshift($_SERVER['argv'], $self);
+$_SERVER['argc'] -= 3;
+
+return (new Runner())->run(
+    new PullRequest($client, $user, $repo, $pull)
+);

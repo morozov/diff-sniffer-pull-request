@@ -16,13 +16,11 @@
     "phpunit/phpunit": "^6.1"
   },
   "autoload": {
-    "files": ["src/diff-sniffer.php"],
     "psr-0": {
       "DiffSniffer": "src/"
     }
   },
   "bin": [
-    "bin/authenticate",
     "bin/pull-request"
   ]
 }
