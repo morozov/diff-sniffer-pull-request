@@ -1,5 +1,6 @@
 {
   "name": "morozov/diff-sniffer-pull-request",
+  "license": "MIT",
   "description": "GitHub pull request validator for Diff Sniffer",
   "authors": [
     {
@@ -16,8 +17,8 @@
     "phpunit/phpunit": "^6.1"
   },
   "autoload": {
-    "psr-0": {
-      "DiffSniffer": "src/"
+    "psr-4": {
+      "DiffSniffer\\PullRequest\\": "src/"
     }
   },
   "bin": [

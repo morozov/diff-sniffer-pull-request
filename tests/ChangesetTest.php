@@ -2,15 +2,15 @@
 
 namespace DiffSniffer\Tests;
 
-use DiffSniffer\Changeset\PullRequest;
+use DiffSniffer\PullRequest\Changeset;
 use Github\Client;
 use Github\HttpClient\HttpClient;
 use PHPUnit\Framework\TestCase;
 
-class PullRequestTest extends TestCase
+class ChangesetTest extends TestCase
 {
     /**
-     * @var PullRequest
+     * @var Changeset
      */
     private $changeSet;
 
@@ -18,7 +18,7 @@ class PullRequestTest extends TestCase
     {
         parent::setUp();
 
-        $this->changeSet = new PullRequest(
+        $this->changeSet = new Changeset(
             new Client(),
             'composer',
             'composer',

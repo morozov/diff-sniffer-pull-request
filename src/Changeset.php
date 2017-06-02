@@ -12,9 +12,9 @@
  * @license   http://mit-license.org/ MIT Licence
  * @link      http://github.com/morozov/diff-sniffer-pull-request
  */
-namespace DiffSniffer\Changeset;
+namespace DiffSniffer\PullRequest;
 
-use DiffSniffer\Changeset;
+use DiffSniffer\Changeset as ChangesetInterface;
 use Github\Client;
 
 /**
@@ -29,7 +29,7 @@ use Github\Client;
  * @license   http://mit-license.org/ MIT Licence
  * @link      http://github.com/morozov/diff-sniffer-pull-request
  */
-class PullRequest implements Changeset
+class Changeset implements ChangesetInterface
 {
     /**
      * GitHub API client

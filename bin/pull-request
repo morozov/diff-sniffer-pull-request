@@ -1,4 +1,38 @@
 #!/usr/bin/env php
 <?php
 
-exit(require __DIR__ . '/../src/pull-request.php');
+/**
+ * Github pull request validation script
+ *
+ * PHP version 5
+ *
+ * @category  DiffSniffer
+ * @package   DiffSniffer
+ * @author    Sergei Morozov <morozov@tut.by>
+ * @copyright 2017 Sergei Morozov
+ * @license   http://mit-license.org/ MIT Licence
+ * @link      http://github.com/morozov/diff-sniffer-pull-request
+ */
+
+use DiffSniffer\Application;
+use DiffSniffer\PullRequest\Command;
+use Github\Client;
+
+require __DIR__ . '/../src/bootstrap.php';
+
+$client = new Client();
+
+if (file_exists(__DIR__ . '/../etc/config.php')) {
+    $config = require __DIR__ . '/../etc/config.php';
+} else {
+    $config = require __DIR__ . '/../etc/config.dist.php';
+}
+
+$client->authenticate($config['token'], null, Client::AUTH_URL_TOKEN);
+
+exit(
+    (new Application())->run(
+        new Command($client),
+        $_SERVER['argv']
+    )
+);
