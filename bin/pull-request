@@ -15,6 +15,7 @@
  */
 
 use DiffSniffer\Application;
+use DiffSniffer\Exception;
 use DiffSniffer\PullRequest\Command;
 use Github\Client;
 
@@ -30,9 +31,14 @@ if (file_exists(__DIR__ . '/../etc/config.php')) {
 
 $client->authenticate($config['token'], null, Client::AUTH_URL_TOKEN);
 
-exit(
-    (new Application())->run(
-        new Command($client),
-        $_SERVER['argv']
-    )
-);
+try {
+    exit(
+        (new Application())->run(
+            new Command($client),
+            $_SERVER['argv']
+        )
+    );
+} catch (Exception $e) {
+    fwrite(STDERR, $e->getMessage() . PHP_EOL);
+    exit(1);
+}
