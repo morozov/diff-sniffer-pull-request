@@ -19,7 +19,7 @@ use DiffSniffer\Exception;
 use DiffSniffer\PullRequest\Command;
 use Github\Client;
 
-require __DIR__ . '/../src/bootstrap.php';
+require __DIR__ . '/../include/bootstrap.php';
 
 $client = new Client();
 
