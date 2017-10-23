@@ -346,18 +346,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/morozov/diff-sniffer-core.git",
-                "reference": "f76be34266777b733c305e74806a4910f4736a0f"
+                "reference": "10ef1541a30def0a6f9454442cfa715fc086daa9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/morozov/diff-sniffer-core/zipball/f76be34266777b733c305e74806a4910f4736a0f",
-                "reference": "f76be34266777b733c305e74806a4910f4736a0f",
+                "url": "https://api.github.com/repos/morozov/diff-sniffer-core/zipball/10ef1541a30def0a6f9454442cfa715fc086daa9",
+                "reference": "10ef1541a30def0a6f9454442cfa715fc086daa9",
                 "shasum": ""
             },
             "require": {
                 "morozov/bootstrap": "^1.1",
                 "ocramius/package-versions": "^1.1",
-                "php": "^7.0",
+                "php": "^7.1",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "require-dev": {
@@ -365,8 +365,8 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "DiffSniffer": "src/"
+                "psr-4": {
+                    "DiffSniffer\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -380,7 +380,7 @@
                 }
             ],
             "description": "Core component for Diff Sniffer, a tool to validate coding standards only in changed line",
-            "time": "2017-10-01T19:09:16+00:00"
+            "time": "2017-10-24T04:06:57+00:00"
         },
         {
             "name": "ocramius/package-versions",
