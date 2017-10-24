@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DiffSniffer\PullRequest;
 
@@ -61,6 +61,6 @@ USG;
 
         list($user, $repo, $pull) = array_splice($args, 0, 3);
 
-        return new Changeset($this->client, $user, $repo, $pull);
+        return new Changeset($this->client, $user, $repo, (int) $pull);
     }
 }

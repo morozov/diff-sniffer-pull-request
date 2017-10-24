@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DiffSniffer\PullRequest;
 
@@ -51,9 +51,9 @@ class Changeset implements ChangesetInterface
      * @param Client $client GitHub API client
      * @param string $user   GitHub user name
      * @param string $repo   GitHub repository
-     * @param string $pull   GitHub pull request ID
+     * @param int    $pull   GitHub pull request ID
      */
-    public function __construct(Client $client, $user, $repo, $pull)
+    public function __construct(Client $client, string $user, string $repo, int $pull)
     {
         $this->client = $client;
         $this->user = $user;
@@ -103,7 +103,7 @@ class Changeset implements ChangesetInterface
      * Returns the representation of the pull request as the given media type
      *
      * @param string $type
-     * @return mixed
+     * @return array|string
      *
      * @link https://developer.github.com/v3/media/
      */

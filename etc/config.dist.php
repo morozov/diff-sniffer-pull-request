@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'token' => getenv('OAUTH_TOKEN'),
+    'token' => getenv('OAUTH_TOKEN') ?: null,
 ];
