@@ -1,17 +1,5 @@
 <?php
 
-/**
- * Changeset that represents pull request on GitHub
- *
- * PHP version 5
- *
- * @category  DiffSniffer
- * @package   DiffSniffer
- * @author    Sergei Morozov <morozov@tut.by>
- * @copyright 2017 Sergei Morozov
- * @license   http://mit-license.org/ MIT Licence
- * @link      http://github.com/morozov/diff-sniffer-pull-request
- */
 namespace DiffSniffer\PullRequest;
 
 use DiffSniffer\Changeset as ChangesetInterface;
@@ -19,15 +7,6 @@ use Github\Client;
 
 /**
  * Changeset that represents pull request on GitHub
- *
- * PHP version 5
- *
- * @category  DiffSniffer
- * @package   DiffSniffer
- * @author    Sergei Morozov <morozov@tut.by>
- * @copyright 2017 Sergei Morozov
- * @license   http://mit-license.org/ MIT Licence
- * @link      http://github.com/morozov/diff-sniffer-pull-request
  */
 class Changeset implements ChangesetInterface
 {
