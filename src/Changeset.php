@@ -8,7 +8,7 @@ use Github\Client;
 /**
  * Changeset that represents pull request on GitHub
  */
-class Changeset implements ChangesetInterface
+final class Changeset implements ChangesetInterface
 {
     /**
      * GitHub API client

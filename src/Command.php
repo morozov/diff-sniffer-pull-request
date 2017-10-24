@@ -10,7 +10,7 @@ use Github\Client;
 /**
  * Pull request validation command
  */
-class Command implements CommandInterface
+final class Command implements CommandInterface
 {
     /**
      * @var Client
