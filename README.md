@@ -1,6 +1,10 @@
 Diff Sniffer For Pull Requests
 ============================
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/badges/quality-score.png)](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/)
+[![Code Coverage](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/badges/coverage.png)](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/)
+[![Build Status](https://travis-ci.org/morozov/diff-sniffer-pull-request.png)](https://travis-ci.org/morozov/diff-sniffer-pull-request)
+
 This tool allows you using [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) to validate coding standards of pull requests.
 
 Installation
