@@ -1,0 +1,6 @@
+parameters:
+    ignoreErrors:
+        # https://github.com/KnpLabs/php-github-api/pull/635
+        - '/Method DiffSniffer\\PullRequest\\Changeset::getContents\(\) should return string but returns mixed\[\]/'
+        # https://github.com/KnpLabs/php-github-api/pull/640
+        - '/Parameter #3 \$id of method Github\\Api\\PullRequest::show\(\) expects string, int given/'

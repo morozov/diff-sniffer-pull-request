@@ -3,6 +3,8 @@
 namespace DiffSniffer\PullRequest;
 
 use DiffSniffer\Changeset as ChangesetInterface;
+use Github\Api\PullRequest;
+use Github\Api\Repo;
 use Github\Client;
 
 /**
@@ -39,11 +41,11 @@ final class Changeset implements ChangesetInterface
     protected $pull;
 
     /**
-     * Map of file names to their SHA1 checksum
+     * SHA checksum of the pull request HEAD commit
      *
-     * @var array<string,string>
+     * @var string
      */
-    private $sha = array();
+    private $sha;
 
     /**
      * Constructor
@@ -74,7 +76,10 @@ final class Changeset implements ChangesetInterface
      */
     public function getContents(string $path) : string
     {
-        return $this->client->api('repo')
+        /** @var Repo $api */
+        $api = $this->client->api('repo');
+
+        return $api
             ->contents()
             ->configure('raw')
             ->show(
@@ -109,7 +114,10 @@ final class Changeset implements ChangesetInterface
      */
     private function getSelf(string $type)
     {
-        return $this->client->api('pull_request')
+        /** @var PullRequest $api */
+        $api = $this->client->api('pull_request');
+
+        return $api
             ->configure($type)
             ->show(
                 $this->user,

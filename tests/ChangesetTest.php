@@ -1,6 +1,6 @@
 <?php
 
-namespace DiffSniffer\Tests;
+namespace DiffSniffer\PullRequest\Tests;
 
 use DiffSniffer\PullRequest\Changeset;
 use Github\Client;
