@@ -9,8 +9,8 @@
     }
   ],
   "require": {
-    "morozov/diff-sniffer-core": "3.0.x-dev",
-    "knplabs/github-api": "^2.4",
+    "morozov/diff-sniffer-core": "^3.0",
+    "knplabs/github-api": "^2.6",
     "php" : "^7.1"
   },
   "require-dev": {
