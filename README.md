@@ -1,7 +1,9 @@
 Diff Sniffer For Pull Requests
 ============================
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/badges/quality-score.png)](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/)
+[![PHP Version](https://img.shields.io/badge/php-%5E7.1-blue.svg)](https://packagist.org/packages/morozov/diff-sniffer-pull-request)
+[![Latest Stable Version](https://poser.pugx.org/morozov/diff-sniffer-pull-request/v/stable)](https://packagist.org/packages/morozov/diff-sniffer-pull-request)
+[[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/badges/quality-score.png)](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/)
 [![Code Coverage](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/badges/coverage.png)](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/)
 [![Build Status](https://travis-ci.org/morozov/diff-sniffer-pull-request.png)](https://travis-ci.org/morozov/diff-sniffer-pull-request)
 
@@ -12,7 +14,7 @@ Installation
 
 The easiest way to use it is to download PHAR-package:
 ```
-$ wget https://github.com/morozov/diff-sniffer-pull-request/releases/download/2.3.0/pull-request.phar
+$ wget https://github.com/morozov/diff-sniffer-pull-request/releases/download/3.0.0/pull-request.phar
 $ chmod +x pull-request.phar
 ```
 
