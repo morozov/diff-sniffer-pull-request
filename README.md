@@ -3,7 +3,7 @@ Diff Sniffer For Pull Requests
 
 [![PHP Version](https://img.shields.io/badge/php-%5E7.1-blue.svg)](https://packagist.org/packages/morozov/diff-sniffer-pull-request)
 [![Latest Stable Version](https://poser.pugx.org/morozov/diff-sniffer-pull-request/v/stable)](https://packagist.org/packages/morozov/diff-sniffer-pull-request)
-[[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/badges/quality-score.png)](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/badges/quality-score.png)](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/)
 [![Code Coverage](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/badges/coverage.png)](https://scrutinizer-ci.com/g/morozov/diff-sniffer-pull-request/)
 [![Build Status](https://travis-ci.org/morozov/diff-sniffer-pull-request.png)](https://travis-ci.org/morozov/diff-sniffer-pull-request)
 
