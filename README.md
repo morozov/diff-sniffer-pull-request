@@ -14,7 +14,7 @@ Installation
 
 The easiest way to use it is to download PHAR-package:
 ```
-$ wget https://github.com/morozov/diff-sniffer-pull-request/releases/download/3.1.0/pull-request.phar
+$ wget https://github.com/morozov/diff-sniffer-pull-request/releases/download/3.1.1/pull-request.phar
 $ chmod +x pull-request.phar
 ```
 

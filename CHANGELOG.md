@@ -1,4 +1,10 @@
-# Changes in Diff Sniffer Core component
+# Changes in Diff Sniffer For Pull Requests
+
+## [3.1.1] - 2017-12-07
+
+### Fixed
+
+* Excluded rules are still reported if caching is enabled (morozov/diff-sniffer-core#3).
 
 ## [3.1.0] - 2017-12-02
 
